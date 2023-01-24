@@ -419,7 +419,8 @@ void randam(void)
       bxr.strengh = bxr.chin + 7;
   }
 
-  timefile.open("GAMETIME.BIN",ios::in|ios::out|ios::binary);
+
+  timefile.open("GAMETIME.BIN",ios::in|ios::binary);
   if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
@@ -429,14 +430,25 @@ void randam(void)
 
 
    timefile.read((char *)(&ft),STRUCTSIZETIME);
+   timefile.close();
 
    fn = ft.boxernumber;
    bxr.fighternumber = fn;
-   fn++;
+   fn = fn + 1;
    ft.boxernumber = fn;
 
-   timefile.write((char *)(&ft),STRUCTSIZETIME);
 
+  timefile.open("GAMETIME.BIN",ios::out|ios::binary);
+  if(timefile.fail())
+  {
+  	cout << "No time file exists - Press a key" << endl;
+        getch();
+        return;
+  }
+
+
+
+   timefile.write((char *)(&ft),STRUCTSIZETIME);
    timefile.close();
 
 
