@@ -40,9 +40,6 @@ void amrandomize(void)
 
   profile.close();
 
-  boxer* boxrand = new boxer[i];
-
-
   profile.open("PROBOXERS.BIN",ios::binary|ios::in);
   if(profile.fail())
   {
@@ -51,19 +48,15 @@ void amrandomize(void)
         exit(1);
   }
 
-  while(profile.read((char *)(&boxrand[c]),STRUCTSIZEPRO))
-  {
-      c++;
-  }
 
-   profile.close();
+
 
 
 
   cout <<endl << endl;
   cout << "                          Generate List:" << endl << endl;
   cout << "                          A: Random Amateur Boxers" << endl;
-  cout << "                          B: Random Boxers All" << endl;
+  cout << "                          B: Random Professional Boxers" << endl;
   cout << "                          C: All Boxers Alphabetical List" << endl;
   cin  >> gamechoice;
 
@@ -72,6 +65,16 @@ void amrandomize(void)
 
   if(gamechoice == 'a')
   {
+
+  boxer* boxrand = new boxer[i];
+
+  while(profile.read((char *)(&boxrand[c]),STRUCTSIZEPRO))
+  {
+      c++;
+  }
+
+  profile.close();
+
 
    for (d = 0; d < i; d++)
   {
@@ -101,7 +104,7 @@ void amrandomize(void)
         exit(1);
   }
 
-      output << "          Random Amateurs" << endl;
+    output << "          Random Amateurs" << endl;
     output << "------------------------------------" << endl;
 
  for (e = 0; e < i; e++)
@@ -114,10 +117,21 @@ void amrandomize(void)
     }
  }
    output.close();
+   delete [] boxrand;
+   boxrand = nullptr;
   }
 
  if(gamechoice == 'b')
   {
+
+  boxer* boxrand = new boxer[i];
+
+  while(profile.read((char *)(&boxrand[c]),STRUCTSIZEPRO))
+  {
+      c++;
+  }
+
+  profile.close();
 
   for (d = 0; d < i; d++)
   {
@@ -148,7 +162,7 @@ void amrandomize(void)
         exit(1);
   }
 
-    output << "          All Random Boxers" << endl;
+    output << "          Random Professionals" << endl;
     output << "----------------------------------------------------" << endl;
 
  for (e = 0; e < i; e++)
@@ -156,16 +170,26 @@ void amrandomize(void)
 
     if(boxrand[e].amorpro == 1 && boxrand[e].active == 1 && boxrand[e].suspend == 0 && boxrand[e].wc == 0)
     {
-    output << "#" << setw(5) << boxrand[e].fighternumber << setw(4) << boxrand[e].country << setw(18) << boxrand[e].surname << setw(4) << boxrand[e].firstname
-    << setw(11) <<  boxrand[e].amwins << "-" << boxrand[e].amloses
-    << setw(11) <<  boxrand[e].wins << "-" << boxrand[e].loses << "-" << boxrand[e].draws  <<endl;
+    output << "#" << setw(5) << boxrand[e].fighternumber << setw(4) << boxrand[e].country << setw(18) << boxrand[e].surname << setw(4) << boxrand[e].firstname << setw(11)
+    <<  boxrand[e].wins << "-" << boxrand[e].loses << "-" << boxrand[e].draws  <<endl;
     }
  }
    output.close();
+   delete [] boxrand;
+   boxrand = nullptr;
   }
 
  if(gamechoice == 'c')
   {
+
+    boxer* boxrand = new boxer[i];
+
+  while(profile.read((char *)(&boxrand[c]),STRUCTSIZEPRO))
+  {
+      c++;
+  }
+
+  profile.close();
 
     for (p = 0; p < i; p++)
   {
@@ -218,15 +242,14 @@ void amrandomize(void)
 
  for (e = i - 1; e >= 0; e--)
  {
-    output << "#" << setw(5) << boxrand[e].fighternumber << setw(4) << boxrand[e].country << setw(18) << boxrand[e].surname << setw(4) << boxrand[e].firstname << endl;
+    output << "#" << setw(5) << boxrand[e].fighternumber << setw(4) << boxrand[e].country << setw(18) << boxrand[e].surname << setw(4) << boxrand[e].firstname << setw(11)
+    <<  boxrand[e].amwins << "-" << boxrand[e].amloses << setw(11) <<  boxrand[e].wins << "-" << boxrand[e].loses << "-" << boxrand[e].draws  <<endl;
  }
    output.close();
+   delete [] boxrand;
+   boxrand = nullptr;
   }
 
-
-delete [] boxrand;
-
-boxrand = nullptr;
 
 return;
 

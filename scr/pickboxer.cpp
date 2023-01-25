@@ -17,7 +17,12 @@ void pickboxer(void)
  char gamechoice;
  int fn;
 
- timefile.open("GAMETIME.BIN",ios::in|ios::binary);
+
+
+ do
+ {
+
+  timefile.open("GAMETIME.BIN",ios::in|ios::binary);
  if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
@@ -28,18 +33,15 @@ void pickboxer(void)
   timefile.read((char *)(&ft),STRUCTSIZETIME);
   timefile.close();
 
- fn = ft.boxernumber;
- --fn;
-
- do
- {
+  fn = ft.boxernumber;
+  --fn;
 
   fseek(stdin,0,SEEK_END);
 
   cout <<endl << endl;
   cout << "                     HEAVYWEIGHT BOXING PROMOTER" << endl << endl;
   cout << "                             NEW BOXER MENU:" << endl << endl;
-  cout << "                 COMPLETE NUNMBER OF BOXERS IS:" << fn << endl << endl;
+  cout << "                 COMPLETE NUNMBER OF BOXERS IS: " << fn << endl << endl;
   cout << "                          A.Create Random Junior Boxer" << endl;
   cout << "                          B.Create Random Senior Boxer" << endl;
   cout << "                          C.Create Random Club Fighter" << endl;
