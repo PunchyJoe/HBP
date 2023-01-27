@@ -18,7 +18,7 @@ void weightmaker(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -69,7 +69,7 @@ void weightmaker(void)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -93,12 +93,12 @@ void weightmaker(void)
                cout << " " << bxr.firstname << " " << bxr.surname << " makes weight " << bxr.weight  <<endl << endl;
 
                profile.write((char *)(&bxr),STRUCTSIZEPRO);
-               getch();
+               _getch();
             }
             else
             {
                cout << "BOXER IS TOO HEAVY!!!" << endl;
-               getch();
+               _getch();
             }
 
 

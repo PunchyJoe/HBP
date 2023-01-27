@@ -28,7 +28,7 @@ void allrecords(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -80,7 +80,7 @@ void allrecords(void)
         if(profile.fail())
          {
          cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -105,7 +105,7 @@ void allrecords(void)
         if(boxrecords.fail())
         {
           cout << "Could not open Pro records file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -134,7 +134,7 @@ void allrecords(void)
    }
 
    cin.sync();
-   getch();
+   _getch();
    boxrecords.close();
   }
 
@@ -145,7 +145,7 @@ void allrecords(void)
         if(amrecords.fail())
         {
           cout << "Could not open Pro records file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -173,7 +173,7 @@ void allrecords(void)
    }
 
    cin.sync();
-   getch();
+   _getch();
    amrecords.close();
  }
 

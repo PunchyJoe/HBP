@@ -12,7 +12,7 @@ void amrandomize(void)
 
 
 
-  srand (time(NULL));
+  srand ( static_cast<unsigned int>(time(NULL)) );
 
   char gamechoice;
   int e;
@@ -29,7 +29,7 @@ void amrandomize(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -44,7 +44,7 @@ void amrandomize(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -67,6 +67,9 @@ void amrandomize(void)
   {
 
   boxer* boxrand = new boxer[i];
+
+  //vector<boxer> boxrand(i);
+
 
   while(profile.read((char *)(&boxrand[c]),STRUCTSIZEPRO))
   {
@@ -100,7 +103,7 @@ void amrandomize(void)
   if(output.fail())
   {
   cout << "Could not write to boxer list file Am - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -125,6 +128,9 @@ void amrandomize(void)
   {
 
   boxer* boxrand = new boxer[i];
+
+  //vector<boxer> boxrand(i);
+
 
   while(profile.read((char *)(&boxrand[c]),STRUCTSIZEPRO))
   {
@@ -158,7 +164,7 @@ void amrandomize(void)
   if(output.fail())
   {
   cout << "Could not write to boxer list file All - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -170,8 +176,8 @@ void amrandomize(void)
 
     if(boxrand[e].amorpro == 1 && boxrand[e].active == 1 && boxrand[e].suspend == 0 && boxrand[e].wc == 0)
     {
-    output << "#" << setw(5) << boxrand[e].fighternumber << setw(4) << boxrand[e].country << setw(18) << boxrand[e].surname << setw(4) << boxrand[e].firstname << setw(11)
-    <<  boxrand[e].wins << "-" << boxrand[e].loses << "-" << boxrand[e].draws  <<endl;
+    output << "#" << setw(5) << boxrand[e].fighternumber << setw(4) << boxrand[e].country << setw(18) << boxrand[e].surname << setw(4) << boxrand[e].firstname << setw(6)
+    <<  boxrand[e].weight << setw(11) <<  boxrand[e].wins << "-" << boxrand[e].loses << "-" << boxrand[e].draws  <<endl;
     }
  }
    output.close();
@@ -183,6 +189,8 @@ void amrandomize(void)
   {
 
     boxer* boxrand = new boxer[i];
+
+    //vector<boxer> boxrand(i);
 
   while(profile.read((char *)(&boxrand[c]),STRUCTSIZEPRO))
   {
@@ -232,7 +240,7 @@ void amrandomize(void)
   if(output.fail())
   {
   cout << "Could not write to boxer list file All - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 

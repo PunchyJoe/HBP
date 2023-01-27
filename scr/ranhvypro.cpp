@@ -5,7 +5,7 @@
 void ranhvypro(void)
 {
 
-  srand (time(NULL));
+  srand ( static_cast<unsigned int>(time(NULL)) );
 
   fstream profile;
   fstream boxname;
@@ -32,22 +32,22 @@ void ranhvypro(void)
 
    cout << endl << endl;
    cout << "  GENERATING RANDOM PRO..................PRESS A KEY" << endl << endl;
-   getch();
+   _getch();
 
 
  profile.open("PROBOXERS.BIN",ios::out|ios::app|ios::binary);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
-    strncpy(bxr.firstname, " " , 20);
-    strncpy(bxr.surname, " " , 30);
-    strncpy(bxr.nickname, " " , 15);
+  strncpy_s(bxr.firstname, 20, " ", 20);
+  strncpy_s(bxr.surname, 30, " ", 30);
+  strncpy_s(bxr.nickname, 15, " ", 15);
 
-     srand (time(NULL));
+     srand ( static_cast<unsigned int>(time(NULL)) );
 
   firstl =  rand() % 24 + 1;
     thirdl =  rand() % 24 + 1;
@@ -215,7 +215,7 @@ void ranhvypro(void)
      if(boxname.fail())
      {
         cout << "Could not read from boxer names file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
      }
 
@@ -234,7 +234,7 @@ void ranhvypro(void)
 
      }while(ohffs > 14);
 
-     strcpy(bxr.surname, secondname.c_str());
+     strcpy_s(bxr.surname, secondname.c_str());
 
      for(z = 1; z < ohffs; z++)
      {
@@ -251,25 +251,25 @@ void ranhvypro(void)
 
 
          if(gc <= 70)
-            strncpy(bxr.country, "USA" , 15);
+            strncpy_s(bxr.country, "USA" , 15);
          else if(gc <= 90)
-            strncpy(bxr.country, "ENG" , 15);
+            strncpy_s(bxr.country, "ENG" , 15);
          else if(gc <= 93)
-            strncpy(bxr.country, "IRL" , 15);
+            strncpy_s(bxr.country, "IRL" , 15);
          else if(gc == 94)
-            strncpy(bxr.country, "BRA" , 15);
+            strncpy_s(bxr.country, "BRA" , 15);
          else if(gc == 95)
-            strncpy(bxr.country, "JAM" , 15);
+            strncpy_s(bxr.country, "JAM" , 15);
          else if(gc == 96)
-            strncpy(bxr.country, "SCO" , 15);
+            strncpy_s(bxr.country, "SCO" , 15);
          else if(gc == 97)
-            strncpy(bxr.country, "WAL" , 15);
+            strncpy_s(bxr.country, "WAL" , 15);
          else if(gc == 98)
-            strncpy(bxr.country, "NIL" , 15);
+            strncpy_s(bxr.country, "NIL" , 15);
          else if(gc == 99)
-            strncpy(bxr.country, "CAN" , 15);
+            strncpy_s(bxr.country, "CAN" , 15);
          else
-            strncpy(bxr.country, "MEX" , 15);
+            strncpy_s(bxr.country, "MEX" , 15);
 
 
 
@@ -282,14 +282,14 @@ void ranhvypro(void)
    if(bg == 'n' || bg == 'N')
    {
        cout << "     OK BOXER SCRAPPED!" << endl << endl;
-       getch();
+       _getch();
        profile.close();
        return;
    }
 
 
   cout << "     OK BOXER CREATED!" << endl << endl;
-  getch();
+  _getch();
 
 
    cin.sync();
@@ -378,7 +378,7 @@ void ranhvypro(void)
   if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
-        getch();
+        _getch();
         return;
   }
 
@@ -396,7 +396,7 @@ void ranhvypro(void)
   if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
-        getch();
+        _getch();
         return;
   }
 

@@ -17,7 +17,7 @@ void ctrychange(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -68,7 +68,7 @@ void ctrychange(void)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -98,17 +98,17 @@ void ctrychange(void)
 
      switch(gc)
 	  {
-		  case 'a': strncpy(bxr.country, "USA" , 15);
+		  case 'a': strncpy_s(bxr.country, "USA" , 15);
 		  break;
-		  case 'b': strncpy(bxr.country, "ENG" , 15);
+		  case 'b': strncpy_s(bxr.country, "ENG" , 15);
 		  break;
-		  case 'c': strncpy(bxr.country, "CUB" , 15);
+		  case 'c': strncpy_s(bxr.country, "CUB" , 15);
 		  break;
-		  case 'd': strncpy(bxr.country, "NGA" , 15);
+		  case 'd': strncpy_s(bxr.country, "NGA" , 15);
 		  break;
-		  case 'e': strncpy(bxr.country, "RUS" , 15);
+		  case 'e': strncpy_s(bxr.country, "RUS" , 15);
           break;
-          case 'f': strncpy(bxr.country, "DEU" , 15);
+          case 'f': strncpy_s(bxr.country, "DEU" , 15);
 		  break;
 		  case 'g':
                    cout << "        A. Ireland" << endl;
@@ -144,57 +144,57 @@ void ctrychange(void)
 
 		          switch(gz)
                  {
-		          case 'a': strncpy(bxr.country, "IRL" , 15);
+		          case 'a': strncpy_s(bxr.country, "IRL" , 15);
 		          break;
-		          case 'b': strncpy(bxr.country, "AUS" , 15);
+		          case 'b': strncpy_s(bxr.country, "AUS" , 15);
                   break;
-		          case 'c': strncpy(bxr.country, "ITA" , 15);
+		          case 'c': strncpy_s(bxr.country, "ITA" , 15);
                   break;
-		          case 'd': strncpy(bxr.country, "JPN" , 15);
+		          case 'd': strncpy_s(bxr.country, "JPN" , 15);
 		          break;
-		          case 'e': strncpy(bxr.country, "CHN" , 15);
+		          case 'e': strncpy_s(bxr.country, "CHN" , 15);
                   break;
-		          case 'f': strncpy(bxr.country, "FRA" , 15);
+		          case 'f': strncpy_s(bxr.country, "FRA" , 15);
 		          break;
-		          case 'g': strncpy(bxr.country, "SWE" , 15);
+		          case 'g': strncpy_s(bxr.country, "SWE" , 15);
                   break;
-                  case 'h': strncpy(bxr.country, "NZL" , 15);
+                  case 'h': strncpy_s(bxr.country, "NZL" , 15);
 		          break;
-		          case 'i': strncpy(bxr.country, "BRA" , 15);
+		          case 'i': strncpy_s(bxr.country, "BRA" , 15);
 		          break;
-		          case 'j': strncpy(bxr.country, "ZAF" , 15);
+		          case 'j': strncpy_s(bxr.country, "ZAF" , 15);
 		          break;
-		          case 'k': strncpy(bxr.country, "JAM" , 15);
+		          case 'k': strncpy_s(bxr.country, "JAM" , 15);
 		          break;
-		          case 'l': strncpy(bxr.country, "IND" , 15);
+		          case 'l': strncpy_s(bxr.country, "IND" , 15);
                   break;
-		          case 'm': strncpy(bxr.country, "SCO" , 15);
+		          case 'm': strncpy_s(bxr.country, "SCO" , 15);
 		          break;
-		          case 'n': strncpy(bxr.country, "WAL" , 15);
+		          case 'n': strncpy_s(bxr.country, "WAL" , 15);
                   break;
-                  case 'o': strncpy(bxr.country, "CAN" , 15);
+                  case 'o': strncpy_s(bxr.country, "CAN" , 15);
 		          break;
-		          case 'p': strncpy(bxr.country, "DNK" , 15);
+		          case 'p': strncpy_s(bxr.country, "DNK" , 15);
 		          break;
-		          case 'q': strncpy(bxr.country, "POL" , 15);
+		          case 'q': strncpy_s(bxr.country, "POL" , 15);
                   break;
-		          case 'r': strncpy(bxr.country, "TUR" , 15);
+		          case 'r': strncpy_s(bxr.country, "TUR" , 15);
 		          break;
-		          case 's': strncpy(bxr.country, "MEX" , 15);
+		          case 's': strncpy_s(bxr.country, "MEX" , 15);
                   break;
-                  case 't': strncpy(bxr.country, "NIL" , 15);
+                  case 't': strncpy_s(bxr.country, "NIL" , 15);
                   break;
-                  case 'u': strncpy(bxr.country, "BLR" , 15);
+                  case 'u': strncpy_s(bxr.country, "BLR" , 15);
                   break;
-                  case 'v': strncpy(bxr.country, "UKR" , 15);
+                  case 'v': strncpy_s(bxr.country, "UKR" , 15);
                   break;
-                  case 'w': strncpy(bxr.country, "ROU" , 15);
+                  case 'w': strncpy_s(bxr.country, "ROU" , 15);
                   break;
-                  case 'x': strncpy(bxr.country, "HUN" , 15);
+                  case 'x': strncpy_s(bxr.country, "HUN" , 15);
                   break;
-                  case 'y': strncpy(bxr.country, "BGR" , 15);
+                  case 'y': strncpy_s(bxr.country, "BGR" , 15);
                   break;
-                  case 'z': strncpy(bxr.country, "MDA" , 15);
+                  case 'z': strncpy_s(bxr.country, "MDA" , 15);
                   break;
 		  }
 	  }

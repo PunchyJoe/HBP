@@ -5,7 +5,7 @@
 void unlic(void)
 {
 
-    srand (time(NULL));
+    srand ( static_cast<unsigned int>(time(NULL)) );
 
     fstream profile;
     fstream timefile;
@@ -88,7 +88,7 @@ void unlic(void)
         if(timefile.fail())
        {
         cout << "Could not create Time file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
        }
 
@@ -99,7 +99,7 @@ void unlic(void)
         if(frec.fail())
           {
            cout << "Could not write to fight record file - Press a key" << endl;
-           getch();
+           _getch();
            exit(1);
           }
 
@@ -107,7 +107,7 @@ void unlic(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -174,7 +174,7 @@ void unlic(void)
       jd = tolower(jd);
       if(jd == 'y')
       {
-          strncpy(amorpro, amfight, 30);
+          strncpy_s(amorpro, amfight, 30);
           xbn = 1;
           nojudges = 1;
           rounds = 8;
@@ -189,18 +189,18 @@ void unlic(void)
      condraw = tolower(condraw);
         if(condraw == 'n')
         {
-           strncpy(amorpro, profight, 30);
+           strncpy_s(amorpro, profight, 30);
            nodraw = 1;
         }
 
         if(condraw == 'y')
         {
-          strncpy(amorpro, profight, 30);
+          strncpy_s(amorpro, profight, 30);
         }
      }
 
 
-       strncpy(boutvenue, "ENG" , 15);
+       strncpy_s(boutvenue, "ENG" , 15);
        cout << endl << endl << endl << endl << endl << endl;
        cout << "        VENUE ENGLAND y/n:" << endl << endl;
        cin  >> vusa;
@@ -224,17 +224,17 @@ void unlic(void)
 
       switch(gc)
 	  {
-		  case 'a': strncpy(boutvenue, "USA" , 15);
+		  case 'a': strncpy_s(boutvenue, "USA" , 15);
 		  break;
-		  case 'b': strncpy(boutvenue, "SAU" , 15);
+		  case 'b': strncpy_s(boutvenue, "SAU" , 15);
 		  break;
-		  case 'c': strncpy(boutvenue, "ENG" , 15);
+		  case 'c': strncpy_s(boutvenue, "ENG" , 15);
 		  break;
-		  case 'd': strncpy(boutvenue, "NGA" , 15);
+		  case 'd': strncpy_s(boutvenue, "NGA" , 15);
 		  break;
-		  case 'e': strncpy(boutvenue, "RUS" , 15);
+		  case 'e': strncpy_s(boutvenue, "RUS" , 15);
           break;
-          case 'f': strncpy(boutvenue, "DEU" , 15);
+          case 'f': strncpy_s(boutvenue, "DEU" , 15);
 		  break;
 		  case 'g':
                    cout << "        A. Ireland" << endl;
@@ -270,57 +270,57 @@ void unlic(void)
 
 		          switch(gz)
                  {
-		          case 'a': strncpy(boutvenue, "IRL" , 15);
+		          case 'a': strncpy_s(boutvenue, "IRL" , 15);
 		          break;
-		          case 'b': strncpy(boutvenue, "AUS" , 15);
+		          case 'b': strncpy_s(boutvenue, "AUS" , 15);
                   break;
-		          case 'c': strncpy(boutvenue, "ITA" , 15);
+		          case 'c': strncpy_s(boutvenue, "ITA" , 15);
                   break;
-		          case 'd': strncpy(boutvenue, "JPN" , 15);
+		          case 'd': strncpy_s(boutvenue, "JPN" , 15);
 		          break;
-		          case 'e': strncpy(boutvenue, "CHN" , 15);
+		          case 'e': strncpy_s(boutvenue, "CHN" , 15);
                   break;
-		          case 'f': strncpy(boutvenue, "FRA" , 15);
+		          case 'f': strncpy_s(boutvenue, "FRA" , 15);
 		          break;
-		          case 'g': strncpy(boutvenue, "SWE" , 15);
+		          case 'g': strncpy_s(boutvenue, "SWE" , 15);
                   break;
-                  case 'h': strncpy(boutvenue, "NZL" , 15);
+                  case 'h': strncpy_s(boutvenue, "NZL" , 15);
 		          break;
-		          case 'i': strncpy(boutvenue, "BRA" , 15);
+		          case 'i': strncpy_s(boutvenue, "BRA" , 15);
 		          break;
-		          case 'j': strncpy(boutvenue, "ZAF" , 15);
+		          case 'j': strncpy_s(boutvenue, "ZAF" , 15);
 		          break;
-		          case 'k': strncpy(boutvenue, "JAM" , 15);
+		          case 'k': strncpy_s(boutvenue, "JAM" , 15);
 		          break;
-		          case 'l': strncpy(boutvenue, "IND" , 15);
+		          case 'l': strncpy_s(boutvenue, "IND" , 15);
                   break;
-		          case 'm': strncpy(boutvenue, "SCO" , 15);
+		          case 'm': strncpy_s(boutvenue, "SCO" , 15);
 		          break;
-		          case 'n': strncpy(boutvenue, "WAL" , 15);
+		          case 'n': strncpy_s(boutvenue, "WAL" , 15);
                   break;
-                  case 'o': strncpy(boutvenue, "CAN" , 15);
+                  case 'o': strncpy_s(boutvenue, "CAN" , 15);
 		          break;
-		          case 'p': strncpy(boutvenue, "DNK" , 15);
+		          case 'p': strncpy_s(boutvenue, "DNK" , 15);
 		          break;
-		          case 'q': strncpy(boutvenue, "POL" , 15);
+		          case 'q': strncpy_s(boutvenue, "POL" , 15);
                   break;
-		          case 'r': strncpy(boutvenue, "TUR" , 15);
+		          case 'r': strncpy_s(boutvenue, "TUR" , 15);
 		          break;
-		          case 's': strncpy(boutvenue, "MEX" , 15);
+		          case 's': strncpy_s(boutvenue, "MEX" , 15);
                   break;
-                  case 't': strncpy(boutvenue, "NIL" , 15);
+                  case 't': strncpy_s(boutvenue, "NIL" , 15);
                   break;
-                  case 'u': strncpy(boutvenue, "BLR" , 15);
+                  case 'u': strncpy_s(boutvenue, "BLR" , 15);
                   break;
-                  case 'v': strncpy(boutvenue, "UKR" , 15);
+                  case 'v': strncpy_s(boutvenue, "UKR" , 15);
                   break;
-                  case 'w': strncpy(boutvenue, "ROU" , 15);
+                  case 'w': strncpy_s(boutvenue, "ROU" , 15);
                   break;
-                  case 'x': strncpy(boutvenue, "HUN" , 15);
+                  case 'x': strncpy_s(boutvenue, "HUN" , 15);
                   break;
-                  case 'y': strncpy(boutvenue, "BGR" , 15);
+                  case 'y': strncpy_s(boutvenue, "BGR" , 15);
                   break;
-                  case 'z': strncpy(boutvenue, "MDA" , 15);
+                  case 'z': strncpy_s(boutvenue, "MDA" , 15);
                   break;
 		  }
 	  }
@@ -334,7 +334,7 @@ void unlic(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -359,7 +359,7 @@ void unlic(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -380,7 +380,7 @@ void unlic(void)
      if(boxr[0].suspend > 0 ||  boxr[1].suspend > 0)
      {
            cout << "           Bout Cannot take place. One or both Boxers suspended" << endl;
-           getch();
+           _getch();
           frec.close();
           return;
      }
@@ -392,7 +392,7 @@ void unlic(void)
 
 
          cin.sync();
-         getch();
+         _getch();
          cin.sync();
 
          cout << endl << endl;
@@ -414,7 +414,7 @@ void unlic(void)
      cout << "                  " << boxr[0].heightfeet << "-" << boxr[0].heightinches << "                              " << boxr[1].heightfeet << "-" << boxr[1].heightinches << endl;
      cout << "                  Create this contest y/n"<< endl;
      //cin >>  goahead;
-     goahead = getch();
+     goahead = _getch();
 
     goahead = tolower(goahead);
 
@@ -442,7 +442,7 @@ void unlic(void)
 
      cin.sync();
 
-     getch();
+     _getch();
 
      cin.sync();
 
@@ -1350,12 +1350,12 @@ void unlic(void)
             if(jscore11 > jscore12 && jscore21 > jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, unan , 8);
+                strncpy_s(howclose, unan , 8);
             }
             else if(jscore11 > jscore12 && jscore21 > jscore22 && jscore31 < jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, split , 8);
+                strncpy_s(howclose, split , 8);
                 tscore1 = jscore21;
                 tscore2 = jscore22;
                 jscore21 = jscore31;
@@ -1366,23 +1366,23 @@ void unlic(void)
             else if(jscore11 > jscore12 && jscore21 < jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, split , 8);
+                strncpy_s(howclose, split , 8);
 
             }
             else if(jscore11 < jscore12 && jscore21 > jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, split , 8);
+                strncpy_s(howclose, split , 8);
             }
             else if(jscore11 < jscore12 && jscore21 < jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, unan , 8);
+                strncpy_s(howclose, unan , 8);
             }
             else if(jscore11 < jscore12 && jscore21 < jscore22 && jscore31 > jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, split , 8);
+                strncpy_s(howclose, split , 8);
                 tscore1 = jscore21;
                 tscore2 = jscore22;
                 jscore21 = jscore31;
@@ -1393,17 +1393,17 @@ void unlic(void)
             else if(jscore11 < jscore12 && jscore21 > jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, split , 8);
+                strncpy_s(howclose, split , 8);
             }
             else if(jscore11 > jscore12 && jscore21 < jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, split , 8);
+                strncpy_s(howclose, split , 8);
             }
             else if(jscore11 > jscore12 && jscore21 > jscore22 && jscore31 == jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 tscore1 = jscore21;
                 tscore2 = jscore22;
                 jscore21 = jscore31;
@@ -1414,17 +1414,17 @@ void unlic(void)
             else if(jscore11 > jscore12 && jscore21 == jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
             }
             else if(jscore11 == jscore12 && jscore21 > jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
             }
             else if(jscore11 < jscore12 && jscore21 < jscore22 && jscore31 == jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 tscore1 = jscore21;
                 tscore2 = jscore22;
                 jscore21 = jscore31;
@@ -1435,23 +1435,23 @@ void unlic(void)
             else if(jscore11 < jscore12 && jscore21 == jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
             }
             else if(jscore11 == jscore12 && jscore21 < jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
             }
             else if(jscore11 == jscore12 && jscore21 == jscore22 && jscore31 == jscore32)
             {
                 itsadraw = 1;
-                strncpy(howclose, unan , 8);
+                strncpy_s(howclose, unan , 8);
 
             }
             else if(jscore11 == jscore12 && jscore21 == jscore22)
             {
                 itsadraw = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 tscore1 = jscore21;
                 tscore2 = jscore22;
                 jscore21 = jscore31;
@@ -1462,12 +1462,12 @@ void unlic(void)
             else if(jscore11 == jscore12 && jscore31 == jscore32)
             {
                 itsadraw = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
             }
             else
             {
                 itsadraw = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
             }
 
          }
@@ -1477,7 +1477,7 @@ void unlic(void)
         if(olymrec.fail())
           {
            cout << "Could not write to fight record file - Press a key" << endl;
-           getch();
+           _getch();
            exit(1);
           }
 
@@ -1616,7 +1616,7 @@ void unlic(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
          }
 
@@ -1648,7 +1648,7 @@ void unlic(void)
 
          cin.sync();
          cout << endl << "Press a key.................." << endl;
-         getch();
+         _getch();
          cin.sync();
 
         frec << "================================================================================" << endl;

@@ -291,7 +291,7 @@ void worldhistory(void)
 
       ledg.close();
       cin.sync();
-      getch();
+      _getch();
 
      system("cls");
 

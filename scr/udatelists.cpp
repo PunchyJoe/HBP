@@ -9,11 +9,13 @@ void updatelists(void)
      fstream profile;
      fstream boxrecords;
      fstream timefile;
-     fighttime ft;
+     fstream ratingoutput;
+
+      fighttime ft;
       boxer bxr;
       int z;
 
-       fstream ratingoutput;
+
        int a = 0;
        int c = 0;
        int j;
@@ -25,7 +27,7 @@ void updatelists(void)
     if(timefile.fail())
        {
         cout << "Could not create Time file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
        }
 
@@ -33,293 +35,34 @@ void updatelists(void)
       timefile.close();
 
 
-  boxlist.open("BOXERLIST.txt",ios::out);
-  if(boxlist.fail())
-  {
-  cout << "Could not write to boxer list file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
-  if(profile.fail())
-  {
-  cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  z = 0;
-
-  boxlist << "   ACTIVE PRO BOXER LIST" << endl;
-  boxlist << "   -----------------------------------" << endl;
-
-  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
-  {
-    z++;
-    if(bxr.active > 0 && bxr.totalfights > 0 && bxr.wc == 0)
-    {
-    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
-    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
-    }
-
-   }
-
-  cout << endl;
-
-  profile.close();
-  boxlist.close();
-
-    boxlist.open("HEAVYWEIGHTPLUSLIST.txt",ios::out);
-  if(boxlist.fail())
-  {
-  cout << "Could not write to boxer list file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
-  if(profile.fail())
-  {
-  cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  z = 0;
-
-    boxlist << "   ACTIVE PRO +210 BOXER LIST" << endl;
-    boxlist << "   ------------------------------------" << endl;
-
-  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
-  {
-    z++;
-    if(bxr.active > 0 && bxr.totalfights > 0 &&  bxr.weight > CRUZERLIMIT && bxr.wc == 0)
-    {
-    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
-    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
-    }
-
-   }
-
-  cout << endl;
-
-  profile.close();
-  boxlist.close();
-
-
-
-
-  boxlist.open("CRUZERBOXERLIST.txt",ios::out);
-  if(boxlist.fail())
-  {
-  cout << "Could not write to boxer list file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
-  if(profile.fail())
-  {
-  cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  z = 0;
-
-    boxlist << "   ACTIVE PRO -210 BOXER LIST" << endl;
-    boxlist << "   ------------------------------------" << endl;
-
-  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
-  {
-    z++;
-    if(bxr.active > 0 && bxr.totalfights > 0 &&  bxr.weight <= CRUZERLIMIT && bxr.wc == 0)
-    {
-    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
-    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
-    }
-
-   }
-
-  cout << endl;
-
-  profile.close();
-  boxlist.close();
-
-
-
-
-
-   boxlist.open("ACTIVEAMLIST.txt",ios::out);
-  if(boxlist.fail())
-  {
-  cout << "Could not write to boxer list file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
-  if(profile.fail())
-  {
-  cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  z = 0;
-
-    boxlist << "   ACTIVE AMATEUR BOXER LIST" << endl;
-    boxlist << "   --------------------------" << endl;
-
- while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
-  {
-    z++;
-    if(bxr.active > 0 && bxr.totalfights < 1 && bxr.wc == 0)
-    {
-    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
-    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.amwins << "-" << bxr.amloses  << endl;
-    }
-  }
-
-  cout << endl;
-
-  profile.close();
-  boxlist.close();
-
-
-
-boxlist.open("INACTIVELIST.txt",ios::out);
-  if(boxlist.fail())
-  {
-  cout << "Could not write to boxer list file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
-  if(profile.fail())
-  {
-  cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  z = 0;
-
-  boxlist << "   INACTIVE OR RETIRED BOXER LIST" << endl;
-  boxlist << "   -----------------------------------" << endl;
-
-  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
-  {
-    z++;
-    if(bxr.active == 0)
-    {
-    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
-    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
-    }
-
-   }
-
-  cout << endl;
-
-  profile.close();
-  boxlist.close();
-
-
-
-  boxlist.open("SUSPENSIONS.txt",ios::out);
-  if(boxlist.fail())
-  {
-  cout << "Could not write to boxer list file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
-  if(profile.fail())
-  {
-  cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  z = 0;
-
-  boxlist << "   SUSPENDED BOXER LIST INACTIVE" << endl;
-  boxlist << "   -----------------------------------" << endl;
-
-  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
-  {
-    z++;
-    if(bxr.suspend >= 1 && bxr.active <= 0)
-    {
-    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
-    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
-    }
-
-   }
-
-   profile.close();
-
-    profile.open("PROBOXERS.BIN",ios::binary|ios::in);
-  if(profile.fail())
-  {
-  cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
-        exit(1);
-  }
-
-  z = 0;
-
-  boxlist << endl;
-  boxlist << "   SUSPENDED BOXER LIST ACTIVE" << endl;
-  boxlist << "   -----------------------------------" << endl;
-
-  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
-  {
-    z++;
-    if(bxr.suspend >= 1 && bxr.active >= 1)
-    {
-    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
-    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
-    }
-
-   }
-
-  cout << endl;
-
-  profile.close();
-  boxlist.close();
-
-
-// ratebox rankings
-
-
-
+  // ratebox rankings
 
   profile.open("PROBOXERS.BIN",ios::binary|ios::in);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
-  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+   while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
   {
     a++;
   }
 
   profile.close();
 
+   // vector<boxer> ratebox(a);
+
+
   boxer* ratebox = new boxer[a];
+
 
   profile.open("PROBOXERS.BIN",ios::binary|ios::in);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -387,7 +130,7 @@ boxlist.open("INACTIVELIST.txt",ios::out);
   if(ratingoutput.fail())
   {
   cout << "Could not write to boxer list file H - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -416,7 +159,7 @@ boxlist.open("INACTIVELIST.txt",ios::out);
   if(ratingoutput.fail())
   {
   cout << "Could not write to boxer list file H - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -443,9 +186,278 @@ boxlist.open("INACTIVELIST.txt",ios::out);
 
   profile.close();
 
-   delete []ratebox;
+  delete []ratebox;
 
-    ratebox = nullptr;
+  ratebox = nullptr;
+
+
+
+
+
+
+
+
+  boxlist.open("BOXERLIST.txt",ios::out);
+  if(boxlist.fail())
+  {
+  cout << "Could not write to boxer list file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
+  if(profile.fail())
+  {
+  cout << "Could not open Pro Boxers file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  z = 0;
+
+  boxlist << "   ACTIVE PRO BOXER LIST" << endl;
+  boxlist << "   -----------------------------------" << endl;
+
+  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+  {
+    z++;
+    if(bxr.active > 0 && bxr.totalfights > 0 && bxr.wc == 0)
+    {
+    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
+    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
+    }
+
+   }
+
+  cout << endl;
+
+  profile.close();
+  boxlist.close();
+
+    boxlist.open("HEAVYWEIGHTPLUSLIST.txt",ios::out);
+  if(boxlist.fail())
+  {
+  cout << "Could not write to boxer list file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
+  if(profile.fail())
+  {
+  cout << "Could not open Pro Boxers file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  z = 0;
+
+    boxlist << "   ACTIVE PRO +210 BOXER LIST" << endl;
+    boxlist << "   ------------------------------------" << endl;
+
+  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+  {
+    z++;
+    if(bxr.active > 0 && bxr.totalfights > 0 &&  bxr.weight > CRUZERLIMIT && bxr.wc == 0)
+    {
+    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
+    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
+    }
+
+   }
+
+  cout << endl;
+
+  profile.close();
+  boxlist.close();
+
+
+
+
+  boxlist.open("CRUZERBOXERLIST.txt",ios::out);
+  if(boxlist.fail())
+  {
+  cout << "Could not write to boxer list file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
+  if(profile.fail())
+  {
+  cout << "Could not open Pro Boxers file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  z = 0;
+
+    boxlist << "   ACTIVE PRO -210 BOXER LIST" << endl;
+    boxlist << "   ------------------------------------" << endl;
+
+  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+  {
+    z++;
+    if(bxr.active > 0 && bxr.totalfights > 0 &&  bxr.weight <= CRUZERLIMIT && bxr.wc == 0)
+    {
+    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
+    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
+    }
+
+   }
+
+  cout << endl;
+
+  profile.close();
+  boxlist.close();
+
+
+
+
+
+   boxlist.open("ACTIVEAMLIST.txt",ios::out);
+  if(boxlist.fail())
+  {
+  cout << "Could not write to boxer list file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
+  if(profile.fail())
+  {
+  cout << "Could not open Pro Boxers file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  z = 0;
+
+    boxlist << "   ACTIVE AMATEUR BOXER LIST" << endl;
+    boxlist << "   --------------------------" << endl;
+
+ while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+  {
+    z++;
+    if(bxr.active > 0 && bxr.totalfights < 1 && bxr.wc == 0)
+    {
+    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
+    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.amwins << "-" << bxr.amloses  << endl;
+    }
+  }
+
+  cout << endl;
+
+  profile.close();
+  boxlist.close();
+
+
+
+boxlist.open("INACTIVELIST.txt",ios::out);
+  if(boxlist.fail())
+  {
+  cout << "Could not write to boxer list file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
+  if(profile.fail())
+  {
+  cout << "Could not open Pro Boxers file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  z = 0;
+
+  boxlist << "   INACTIVE OR RETIRED BOXER LIST" << endl;
+  boxlist << "   -----------------------------------" << endl;
+
+  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+  {
+    z++;
+    if(bxr.active == 0)
+    {
+    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
+    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
+    }
+
+   }
+
+  cout << endl;
+
+  profile.close();
+  boxlist.close();
+
+
+
+  boxlist.open("SUSPENSIONS.txt",ios::out);
+  if(boxlist.fail())
+  {
+  cout << "Could not write to boxer list file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  profile.open("PROBOXERS.BIN",ios::binary|ios::in);
+  if(profile.fail())
+  {
+  cout << "Could not open Pro Boxers file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  z = 0;
+
+  boxlist << "   SUSPENDED BOXER LIST INACTIVE" << endl;
+  boxlist << "   -----------------------------------" << endl;
+
+  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+  {
+    z++;
+    if(bxr.suspend >= 1 && bxr.active <= 0)
+    {
+    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
+    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
+    }
+
+   }
+
+   profile.close();
+
+    profile.open("PROBOXERS.BIN",ios::binary|ios::in);
+  if(profile.fail())
+  {
+  cout << "Could not open Pro Boxers file - Press a key" << endl;
+        _getch();
+        exit(1);
+  }
+
+  z = 0;
+
+  boxlist << endl;
+  boxlist << "   SUSPENDED BOXER LIST ACTIVE" << endl;
+  boxlist << "   -----------------------------------" << endl;
+
+  while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
+  {
+    z++;
+    if(bxr.suspend >= 1 && bxr.active >= 1)
+    {
+    boxlist << "#" << setw(5) << z << setw(4) << bxr.country << setw(21) << bxr.surname << setw(4) << bxr.firstname << setw(11) << bxr.age << ":age  " << bxr.weight << ":weight    " << bxr.heightfeet << "-"
+    << bxr.heightinches << ":Height    Suspended:"  <<  bxr.suspend << "   Inactive " << bxr.inactive << " Weeks" << "   Record " << bxr.wins << "(" << bxr.ko << ")" << bxr.loses << "(" << bxr.koby << ")-" << bxr.draws << endl;
+    }
+
+   }
+
+  cout << endl;
+
+  profile.close();
+  boxlist.close();
+
+
+
 
    return;
 

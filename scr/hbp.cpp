@@ -62,7 +62,7 @@ int main()
          default:
          {
          cout << "Invalid choice press a key and try again" << endl;
-         getch();
+         _getch();
          }
 	  }
 

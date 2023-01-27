@@ -13,7 +13,7 @@ void deactivate(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -62,7 +62,7 @@ void deactivate(void)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 

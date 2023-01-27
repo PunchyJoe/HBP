@@ -145,7 +145,7 @@ void allambouts(void)
 
 
       cin.sync();
-      getch();
+      _getch();
 
 
    system("cls");

@@ -26,7 +26,7 @@ void pickboxer(void)
  if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
-        getch();
+        _getch();
         return;
   }
 

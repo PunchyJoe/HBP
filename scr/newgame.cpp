@@ -23,7 +23,7 @@ void newgame(void)
   if(timefile.fail())
   {
   	cout << "Could not create Time file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -31,7 +31,7 @@ void newgame(void)
   if(profile.fail())
   {
   	cout << "Could not create Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -39,7 +39,7 @@ void newgame(void)
   if(frec.fail())
   {
   	cout << "Could not create Boxing TV file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -48,7 +48,7 @@ void newgame(void)
   if(recfile.fail())
   {
   	cout << "Could not create Pro Records file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -56,7 +56,7 @@ void newgame(void)
   if(amrecfile.fail())
   {
   	cout << "Could not create Amateur Records file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 

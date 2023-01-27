@@ -1,5 +1,3 @@
-
-
 #include "hbpheader.h"
 
 void ratings(void)
@@ -10,7 +8,6 @@ void ratings(void)
   fstream profile;
   fighttime ft;
   boxer bxr;
-
 
   int i = 0;
   int j;
@@ -23,20 +20,23 @@ void ratings(void)
     if(timefile.fail())
        {
         cout << "Could not create Time file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
        }
 
       timefile.read((char *)(&ft),STRUCTSIZETIME);
       timefile.close();
 
+
+
   profile.open("PROBOXERS.BIN",ios::binary|ios::in);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
+
 
   while(profile.read((char *)(&bxr),STRUCTSIZEPRO))
   {
@@ -45,13 +45,17 @@ void ratings(void)
 
   profile.close();
 
+  //  vector<boxer> ratebox(i);
+
   boxer* ratebox = new boxer[i];
+
+
 
   profile.open("PROBOXERS.BIN",ios::binary|ios::in);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -121,7 +125,7 @@ if(ft.week == 1 && (ft.month == 8 || ft.month == 11))
   if(ratingoutput.fail())
   {
   cout << "Could not write to boxer list file 3 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
     ratingoutput << endl << endl;
@@ -154,7 +158,7 @@ if(ft.week == 1 && (ft.month == 8 || ft.month == 11))
   if(ratingoutput.fail())
   {
   cout << "Could not write to boxer list file H - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -188,7 +192,7 @@ if(ft.week == 1 && (ft.month == 8 || ft.month == 11))
   if(ratingoutput.fail())
   {
   cout << "Could not write to boxer list file 7 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
     ratingoutput << endl << endl;
@@ -216,10 +220,9 @@ if(ft.week == 1 && (ft.month == 8 || ft.month == 11))
    profile.close();
 
    delete []ratebox;
+  //ratebox.clear();
+  ratebox = nullptr;
 
-    ratebox = nullptr;
-
-   system("cls");
 
 return;
 

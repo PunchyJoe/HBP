@@ -41,7 +41,8 @@ void vacate(int vorp)
    if(titlechoice <= 0 || titlechoice > 10)
     {
       cin.clear();
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      //cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      scanf_s("%*s");
       return;
     }
 
@@ -51,7 +52,7 @@ void vacate(int vorp)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -121,7 +122,8 @@ void vacate(int vorp)
    if(titlechoice <= 0 || titlechoice > 10)
     {
       cin.clear();
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      //cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      scanf_s("%*s");
       return;
     }
 
@@ -131,7 +133,7 @@ void vacate(int vorp)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -175,7 +177,7 @@ void vacate(int vorp)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 

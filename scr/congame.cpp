@@ -17,6 +17,7 @@ void updatelists(void);
 void nickname(int diff);
 void activate(void);
 void deactivate(void);
+void ratings(void);
 
 void congame(void)
 {
@@ -35,7 +36,7 @@ char gamechoice;
   if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
-        getch();
+        _getch();
         return;
   }
 
@@ -95,7 +96,7 @@ char gamechoice;
          break;
          case 'l': system("cls");  lists();
          break;
-         case 'g': nextweek();
+         case 'g': ratings(); nextweek(); updatelists();
          break;
 		 case 'm': system("cls"); return;
          break;

@@ -13,7 +13,7 @@ void about(void)
    cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 
    cin.sync();
-   getch();
+   _getch();
    system("cls");
 
    return;

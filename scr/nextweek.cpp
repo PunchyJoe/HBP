@@ -30,20 +30,20 @@ void nextweek(void)
        if(timefile.fail())
        {
         cout << "Could not create Time file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
        }
 
       timefile.read((char *)(&ft),STRUCTSIZETIME);
       timefile.close();
 
-       ratings();
+     // ratings();
 
         profile.open("PROBOXERS.BIN",ios::binary|ios::in|ios::out);
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -68,7 +68,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -95,7 +95,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -140,7 +140,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -157,7 +157,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers inactive improve file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -192,7 +192,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -277,7 +277,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -385,7 +385,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -527,7 +527,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -777,7 +777,7 @@ void nextweek(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -838,7 +838,7 @@ void nextweek(void)
         if(timefile.fail())
          {
   	       cout << "Could not create Time file - Press a key" << endl;
-           getch();
+           _getch();
            exit(1);
          }
 
@@ -846,7 +846,7 @@ void nextweek(void)
 
        timefile.close();
 
-       updatelists();
+      //updatelists();
 
 
     return;

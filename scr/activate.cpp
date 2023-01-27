@@ -13,7 +13,7 @@ void activate(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -64,7 +64,7 @@ void activate(void)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 

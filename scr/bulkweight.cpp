@@ -16,7 +16,7 @@ void bulkweight(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -67,7 +67,7 @@ void bulkweight(void)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -87,12 +87,12 @@ void bulkweight(void)
                cout << " " << bxr.firstname << " " << bxr.surname << " is now: " << bxr.weight  <<endl << endl;
 
                profile.write((char *)(&bxr),STRUCTSIZEPRO);
-               getch();
+               _getch();
             }
             else
             {
                cout << "BOXER IS TOO SMALL!!!" << endl;
-               getch();
+               _getch();
             }
 
 

@@ -5,7 +5,7 @@
 void sparring(void)
 {
 
-    srand (time(NULL));
+    srand ( static_cast<unsigned int>(time(NULL)) );
 
     fstream profile;
 
@@ -48,7 +48,7 @@ void sparring(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -96,7 +96,7 @@ void sparring(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -121,7 +121,7 @@ void sparring(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -157,7 +157,7 @@ void sparring(void)
      cout << "                  " << boxr[0].age << "                               " << boxr[1].age << endl;
      cout << "                  " << boxr[0].weight << "                              " << boxr[1].weight << endl;
      cout << "                  " << boxr[0].heightfeet << "-" << boxr[0].heightinches << "                              " << boxr[1].heightfeet << "-" << boxr[1].heightinches << endl;
-     getch();
+     _getch();
 
 
 
@@ -166,7 +166,7 @@ void sparring(void)
 
      cin.sync();
 
-     getch();
+     _getch();
 
      cin.sync();
 
@@ -678,7 +678,7 @@ void sparring(void)
 
          cin.sync();
          cout << endl << "Press a key.................." << endl;
-         getch();
+         _getch();
          cin.sync();
 
 

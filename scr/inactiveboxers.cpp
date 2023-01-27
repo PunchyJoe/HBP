@@ -10,7 +10,7 @@ void inactiveboxers(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -33,7 +33,7 @@ void inactiveboxers(void)
   cout << endl;
 
      cin.sync();
-      getch();
+      _getch();
 
 
 

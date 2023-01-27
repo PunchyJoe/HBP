@@ -25,13 +25,13 @@ void namechange(void)
   char mych;
   char ri, fl, sl, ni, ko, bg;
 
-  srand (time(NULL));
+  srand ( static_cast<unsigned int>(time(NULL)) );
 
   profile.open("PROBOXERS.BIN",ios::binary|ios::in);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -92,7 +92,7 @@ void namechange(void)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -118,7 +118,8 @@ void namechange(void)
             cout << "Enter New Surname " << endl;
             cin.getline(nn,30);
             nn[0] = toupper(nn[0]);
-            strncpy(bxr.surname, nn ,14);
+            strncpy_s(bxr.surname, nn ,30);
+            bxr.surname[13] = '\0';
             profile.write((char *)(&bxr),STRUCTSIZEPRO);
 
         }
@@ -252,13 +253,14 @@ void namechange(void)
         if(bg == 'n' || bg == 'N')
         {
            cout << "     OK NEW NAME SCRAPPED!" << endl << endl;
-           getch();
+           _getch();
            profile.close();
            return;
         }
 
          memset(bxr.surname, 0, sizeof bxr.surname);
-         strncpy(bxr.surname, nn ,14);
+         strncpy_s(bxr.surname, nn ,30);
+         bxr.surname[13] = '\0';
          profile.write((char *)(&bxr),STRUCTSIZEPRO);
 
         }
@@ -275,7 +277,7 @@ void namechange(void)
      if(boxname.fail())
      {
         cout << "Could not read from boxer names file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
      }
 
@@ -306,7 +308,7 @@ void namechange(void)
 
 
 
-     strcpy(bxr.surname, secondname.c_str());
+     strcpy_s(bxr.surname, secondname.c_str());
 
      for(z = 1; z < ohffs; z++)
      {

@@ -27,7 +27,7 @@ void prorecs(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -76,7 +76,7 @@ void prorecs(void)
         if(profile.fail())
          {
          cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -101,7 +101,7 @@ void prorecs(void)
         if(boxrecords.fail())
         {
           cout << "Could not open Pro records file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -131,7 +131,7 @@ void prorecs(void)
 
 
      cin.sync();
-      getch();
+      _getch();
 
   boxrecords.close();
   profile.close();

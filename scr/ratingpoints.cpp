@@ -21,7 +21,7 @@ void ratingpoints(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -34,11 +34,13 @@ void ratingpoints(void)
 
   boxer* ratebox = new boxer[i];
 
+ //    vector<boxer> ratebox(i);
+
   profile.open("PROBOXERS.BIN",ios::binary|ios::in);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file 1 - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -80,11 +82,11 @@ void ratingpoints(void)
 
     delete [] ratebox;
 
-    ratebox = nullptr;
+   ratebox = nullptr;
 
 
       cin.sync();
-      getch();
+      _getch();
 
     return;
 

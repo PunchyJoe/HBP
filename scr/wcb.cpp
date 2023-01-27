@@ -32,7 +32,8 @@ void wcb(void)
   if(gamechoice <= 0 || gamechoice >= 5)
   {
       cin.clear();
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      //cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      scanf_s("%*s");
       return;
   }
 
@@ -47,7 +48,8 @@ void wcb(void)
   if(countrychoice <= 0 || countrychoice >= 3)
   {
       cin.clear();
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+//      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      scanf_s("%*s");
       return;
   }
 
@@ -91,69 +93,69 @@ void wcb(void)
        cin  >> gc;
 
          if(gc == 1)
-            strncpy(bxrcountry, "USA" , 15);
+            strncpy_s(bxrcountry, "USA" , 15);
          else if(gc == 2)
-            strncpy(bxrcountry, "ENG" , 15);
+            strncpy_s(bxrcountry, "ENG" , 15);
          else if(gc == 3)
-            strncpy(bxrcountry, "NGA" , 15);
+            strncpy_s(bxrcountry, "NGA" , 15);
          else if(gc == 4)
-            strncpy(bxrcountry, "RUS" , 15);
+            strncpy_s(bxrcountry, "RUS" , 15);
          else if(gc == 5)
-            strncpy(bxrcountry, "DEU" , 15);
+            strncpy_s(bxrcountry, "DEU" , 15);
          else if(gc == 6)
-            strncpy(bxrcountry, "IRL" , 15);
+            strncpy_s(bxrcountry, "IRL" , 15);
          else if(gc == 7)
-            strncpy(bxrcountry, "AUS" , 15);
+            strncpy_s(bxrcountry, "AUS" , 15);
          else if(gc == 8)
-            strncpy(bxrcountry, "ITA" , 15);
+            strncpy_s(bxrcountry, "ITA" , 15);
          else if(gc == 9)
-            strncpy(bxrcountry, "JPN" , 15);
+            strncpy_s(bxrcountry, "JPN" , 15);
          else if(gc == 10)
-            strncpy(bxrcountry, "CHN" , 15);
+            strncpy_s(bxrcountry, "CHN" , 15);
          else if(gc == 11)
-            strncpy(bxrcountry, "FRA" , 15);
+            strncpy_s(bxrcountry, "FRA" , 15);
          else if(gc == 12)
-            strncpy(bxrcountry, "SWE" , 15);
+            strncpy_s(bxrcountry, "SWE" , 15);
          else if(gc == 13)
-            strncpy(bxrcountry, "NZL" , 15);
+            strncpy_s(bxrcountry, "NZL" , 15);
          else if(gc == 14)
-            strncpy(bxrcountry, "BRA" , 15);
+            strncpy_s(bxrcountry, "BRA" , 15);
          else if(gc == 15)
-            strncpy(bxrcountry, "ZAF" , 15);
+            strncpy_s(bxrcountry, "ZAF" , 15);
          else if(gc == 16)
-            strncpy(bxrcountry, "JAM" , 15);
+            strncpy_s(bxrcountry, "JAM" , 15);
          else if(gc == 17)
-            strncpy(bxrcountry, "IND" , 15);
+            strncpy_s(bxrcountry, "IND" , 15);
          else if(gc == 18)
-            strncpy(bxrcountry, "SCO" , 15);
+            strncpy_s(bxrcountry, "SCO" , 15);
          else if(gc == 19)
-            strncpy(bxrcountry, "WAL" , 15);
+            strncpy_s(bxrcountry, "WAL" , 15);
          else if(gc == 20)
-            strncpy(bxrcountry, "CAN" , 15);
+            strncpy_s(bxrcountry, "CAN" , 15);
          else if(gc == 21)
-            strncpy(bxrcountry, "DNK" , 15);
+            strncpy_s(bxrcountry, "DNK" , 15);
          else if(gc == 22)
-            strncpy(bxrcountry, "POL" , 15);
+            strncpy_s(bxrcountry, "POL" , 15);
          else if(gc == 23)
-            strncpy(bxrcountry, "TUR" , 15);
+            strncpy_s(bxrcountry, "TUR" , 15);
          else if(gc == 24)
-            strncpy(bxrcountry, "MEX" , 15);
+            strncpy_s(bxrcountry, "MEX" , 15);
          else if(gc == 25)
-            strncpy(bxrcountry, "NIL" , 15);
+            strncpy_s(bxrcountry, "NIL" , 15);
          else if(gc == 26)
-            strncpy(bxrcountry, "BLR" , 15);
+            strncpy_s(bxrcountry, "BLR" , 15);
          else if(gc == 27)
-            strncpy(bxrcountry, "UKR" , 15);
+            strncpy_s(bxrcountry, "UKR" , 15);
          else if(gc == 28)
-            strncpy(bxrcountry, "ROU" , 15);
+            strncpy_s(bxrcountry, "ROU" , 15);
          else if(gc == 29)
-            strncpy(bxrcountry, "HUN" , 15);
+            strncpy_s(bxrcountry, "HUN" , 15);
          else if(gc == 30)
-            strncpy(bxrcountry, "BGR" , 15);
+            strncpy_s(bxrcountry, "BGR" , 15);
          else if(gc == 31)
-            strncpy(bxrcountry, "MDA" , 15);
+            strncpy_s(bxrcountry, "MDA" , 15);
          else
-            strncpy(bxrcountry, "CUB" , 15);
+            strncpy_s(bxrcountry, "CUB" , 15);
 
 
   }
@@ -164,7 +166,7 @@ void wcb(void)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -305,7 +307,8 @@ void wcb(void)
   else
   {
       cin.clear();
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+//      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      scanf_s("%*s");
       profile.close();
       return;
   }
@@ -315,7 +318,7 @@ void wcb(void)
    cout << endl;
 
     cin.sync();
-    getch();
+    _getch();
 
     return;
 }

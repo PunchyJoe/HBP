@@ -32,7 +32,7 @@ void amrecs(int noams)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -81,7 +81,7 @@ void amrecs(int noams)
         if(profile.fail())
          {
          cout << "Could not open Amateur Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -104,7 +104,7 @@ void amrecs(int noams)
         if(amrecords.fail())
         {
           cout << "Could not open Pro records file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -134,7 +134,7 @@ void amrecs(int noams)
 
 
       cin.sync();
-      getch();
+      _getch();
 
   amrecords.close();
   profile.close();
@@ -162,7 +162,7 @@ void amrecs(int noams)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -209,7 +209,7 @@ void amrecs(int noams)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 

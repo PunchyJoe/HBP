@@ -5,7 +5,7 @@
 void randam(void)
 {
 
-  srand (time(NULL));
+  srand ( static_cast<unsigned int>(time(NULL)) );
 
   fstream profile;
   fstream boxname;
@@ -32,22 +32,22 @@ void randam(void)
 
    cout << endl << endl;
    cout << "  GENERATING RANDOM AMATEUR..................PRESS A KEY" << endl << endl;
-   getch();
+   _getch();
 
 
  profile.open("PROBOXERS.BIN",ios::out|ios::app|ios::binary);
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
-    strncpy(bxr.firstname, " " , 20);
-    strncpy(bxr.surname, " " , 30);
-    strncpy(bxr.nickname, " " , 15);
+  strncpy_s(bxr.firstname, 20, " ", 20);
+  strncpy_s(bxr.surname, 30, " ", 30);
+  strncpy_s(bxr.nickname, 15, " ", 15);
 
-     srand (time(NULL));
+     srand ( static_cast<unsigned int>(time(NULL)) );
 
     firstl =  rand() % 24 + 1;
     thirdl =  rand() % 24 + 1;
@@ -213,7 +213,7 @@ void randam(void)
      if(boxname.fail())
      {
         cout << "Could not read from boxer names file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
      }
 
@@ -232,7 +232,7 @@ void randam(void)
 
      }while(ohffs > 14);
 
-     strcpy(bxr.surname, secondname.c_str());
+     strcpy_s(bxr.surname, secondname.c_str());
 
      for(z = 1; z < ohffs; z++)
      {
@@ -246,69 +246,69 @@ void randam(void)
           gc = rand() % 105 + 1;
 
          if(gc <= 40)
-            strncpy(bxr.country, "CUB" , 15);
+            strncpy_s(bxr.country, "CUB" , 15);
          else if(gc <= 65)
-            strncpy(bxr.country, "RUS" , 15);
+            strncpy_s(bxr.country, "RUS" , 15);
          else if(gc <= 70)
-            strncpy(bxr.country, "USA" , 15);
+            strncpy_s(bxr.country, "USA" , 15);
          else if(gc <= 75)
-            strncpy(bxr.country, "ENG" , 15);
+            strncpy_s(bxr.country, "ENG" , 15);
          else if(gc <= 78)
-            strncpy(bxr.country, "NGA" , 15);
+            strncpy_s(bxr.country, "NGA" , 15);
          else if(gc == 79)
-            strncpy(bxr.country, "IRL" , 15);
+            strncpy_s(bxr.country, "IRL" , 15);
          else if(gc == 80)
-            strncpy(bxr.country, "ITA" , 15);
+            strncpy_s(bxr.country, "ITA" , 15);
          else if(gc == 81)
-            strncpy(bxr.country, "DEU" , 15);
+            strncpy_s(bxr.country, "DEU" , 15);
          else if(gc == 82)
-            strncpy(bxr.country, "AUS" , 15);
+            strncpy_s(bxr.country, "AUS" , 15);
          else if(gc == 83)
-            strncpy(bxr.country, "NIL" , 15);
+            strncpy_s(bxr.country, "NIL" , 15);
          else if(gc == 84)
-            strncpy(bxr.country, "JPN" , 15);
+            strncpy_s(bxr.country, "JPN" , 15);
          else if(gc == 85)
-            strncpy(bxr.country, "CHN" , 15);
+            strncpy_s(bxr.country, "CHN" , 15);
          else if(gc == 86)
-            strncpy(bxr.country, "FRA" , 15);
+            strncpy_s(bxr.country, "FRA" , 15);
          else if(gc == 87)
-            strncpy(bxr.country, "SWE" , 15);
+            strncpy_s(bxr.country, "SWE" , 15);
          else if(gc == 88)
-            strncpy(bxr.country, "NZL" , 15);
+            strncpy_s(bxr.country, "NZL" , 15);
          else if(gc == 89)
-            strncpy(bxr.country, "BRA" , 15);
+            strncpy_s(bxr.country, "BRA" , 15);
          else if(gc == 90)
-            strncpy(bxr.country, "ZAF" , 15);
+            strncpy_s(bxr.country, "ZAF" , 15);
          else if(gc == 91)
-            strncpy(bxr.country, "JAM" , 15);
+            strncpy_s(bxr.country, "JAM" , 15);
          else if(gc == 92)
-            strncpy(bxr.country, "IND" , 15);
+            strncpy_s(bxr.country, "IND" , 15);
          else if(gc == 93)
-            strncpy(bxr.country, "SCO" , 15);
+            strncpy_s(bxr.country, "SCO" , 15);
          else if(gc == 94)
-            strncpy(bxr.country, "WAL" , 15);
+            strncpy_s(bxr.country, "WAL" , 15);
          else if(gc == 95)
-            strncpy(bxr.country, "CAN" , 15);
+            strncpy_s(bxr.country, "CAN" , 15);
          else if(gc == 96)
-            strncpy(bxr.country, "DNK" , 15);
+            strncpy_s(bxr.country, "DNK" , 15);
          else if(gc == 97)
-            strncpy(bxr.country, "POL" , 15);
+            strncpy_s(bxr.country, "POL" , 15);
          else if(gc == 98)
-            strncpy(bxr.country, "TUR" , 15);
+            strncpy_s(bxr.country, "TUR" , 15);
          else if(gc == 99)
-            strncpy(bxr.country, "MEX" , 15);
+            strncpy_s(bxr.country, "MEX" , 15);
          else if(gc == 100)
-            strncpy(bxr.country, "BLR" , 15);
+            strncpy_s(bxr.country, "BLR" , 15);
          else if(gc == 101)
-            strncpy(bxr.country, "UKR" , 15);
+            strncpy_s(bxr.country, "UKR" , 15);
          else if(gc == 102)
-            strncpy(bxr.country, "ROU" , 15);
+            strncpy_s(bxr.country, "ROU" , 15);
          else if(gc == 103)
-            strncpy(bxr.country, "HUN" , 15);
+            strncpy_s(bxr.country, "HUN" , 15);
          else if(gc == 104)
-            strncpy(bxr.country, "BGR" , 15);
+            strncpy_s(bxr.country, "BGR" , 15);
          else
-            strncpy(bxr.country, "MDA" , 15);
+            strncpy_s(bxr.country, "MDA" , 15);
 
    bxr.age = rand() % 3 + 17;
 
@@ -319,14 +319,14 @@ void randam(void)
    if(bg == 'n' || bg == 'N')
    {
        cout << "     OK BOXER SCRAPPED!" << endl << endl;
-       getch();
+       _getch();
        profile.close();
        return;
    }
 
 
   cout << "     OK BOXER CREATED!" << endl << endl;
-  getch();
+  _getch();
 
 
    cin.sync();
@@ -424,7 +424,7 @@ void randam(void)
   if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
-        getch();
+        _getch();
         return;
   }
 
@@ -442,7 +442,7 @@ void randam(void)
   if(timefile.fail())
   {
   	cout << "No time file exists - Press a key" << endl;
-        getch();
+        _getch();
         return;
   }
 

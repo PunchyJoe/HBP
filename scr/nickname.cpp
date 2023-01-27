@@ -24,7 +24,7 @@ void nickname(int diff)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
 
@@ -76,7 +76,7 @@ void nickname(int diff)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 
@@ -89,7 +89,7 @@ void nickname(int diff)
             profile.seekp(-STRUCTSIZEPRO, ios::cur);
             cout << "Enter New Nickname " << endl;
             cin.getline(alias,15);
-            strncpy(bxr.nickname, alias ,15);
+            strncpy_s(bxr.nickname, alias ,15);
             profile.write((char *)(&bxr),STRUCTSIZEPRO);
 
 
@@ -117,7 +117,7 @@ void nickname(int diff)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
       cout << "#           INACTIVE" << endl;
@@ -145,7 +145,7 @@ void nickname(int diff)
   if(profile.fail())
   {
   cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
   }
       cout << endl;
@@ -198,7 +198,7 @@ void nickname(int diff)
        if(profile.fail())
        {
         cout << "Could not open Pro Boxers file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
         }
 

@@ -5,7 +5,7 @@
 void contestam(void)
 {
 
-    srand (time(NULL));
+    srand ( static_cast<unsigned int>(time(NULL)) );
 
     fstream profile;
     fstream amrecords;
@@ -89,7 +89,7 @@ void contestam(void)
         if(timefile.fail())
        {
         cout << "Could not create Time file - Press a key" << endl;
-        getch();
+        _getch();
         exit(1);
        }
 
@@ -100,7 +100,7 @@ void contestam(void)
         if(frec.fail())
           {
            cout << "Could not write to fight record file - Press a key" << endl;
-           getch();
+           _getch();
            exit(1);
           }
 
@@ -108,7 +108,7 @@ void contestam(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -158,7 +158,7 @@ void contestam(void)
 
      rounds = 3;
 
-     strncpy(boutvenue, "CUB" , 15);
+     strncpy_s(boutvenue, "CUB" , 15);
 
      cout << endl << endl;
 
@@ -169,7 +169,7 @@ void contestam(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -194,7 +194,7 @@ void contestam(void)
       if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
        }
 
@@ -212,8 +212,8 @@ void contestam(void)
      profile.close();
 
 
-     strncpy(amorpro, amfight, 30);
-     strncpy(bouttitle, "WORLD 3R" , 30);
+     strncpy_s(amorpro, amfight, 30);
+     strncpy_s(bouttitle, "WORLD 3R" , 30);
 
     cout << "OLYMPIC BOUT: y/n" << endl;
     cin >> condraw;
@@ -221,8 +221,8 @@ void contestam(void)
 
         if(condraw == 'y')
         {
-          strncpy(amorpro, olymfight, 30);
-          strncpy(bouttitle, "OLYMPIC 5R" , 30);
+          strncpy_s(amorpro, olymfight, 30);
+          strncpy_s(bouttitle, "OLYMPIC 5R" , 30);
           rounds = 5;
           gloveset = 1;
        cout << endl << endl << endl << endl << endl << endl;
@@ -242,17 +242,17 @@ void contestam(void)
 
       switch(gc)
 	  {
-		  case 'a': strncpy(boutvenue, "USA" , 15);
+		  case 'a': strncpy_s(boutvenue, "USA" , 15);
 		  break;
-		  case 'b': strncpy(boutvenue, "SAU" , 15);
+		  case 'b': strncpy_s(boutvenue, "SAU" , 15);
 		  break;
-		  case 'c': strncpy(boutvenue, "ENG" , 15);
+		  case 'c': strncpy_s(boutvenue, "ENG" , 15);
 		  break;
-		  case 'd': strncpy(boutvenue, "NGA" , 15);
+		  case 'd': strncpy_s(boutvenue, "NGA" , 15);
 		  break;
-		  case 'e': strncpy(boutvenue, "RUS" , 15);
+		  case 'e': strncpy_s(boutvenue, "RUS" , 15);
           break;
-          case 'f': strncpy(boutvenue, "DEU" , 15);
+          case 'f': strncpy_s(boutvenue, "DEU" , 15);
 		  break;
 		  case 'g':
                    cout << "        A. Ireland" << endl;
@@ -288,57 +288,57 @@ void contestam(void)
 
 		          switch(gz)
                  {
-		          case 'a': strncpy(boutvenue, "IRL" , 15);
+		          case 'a': strncpy_s(boutvenue, "IRL" , 15);
 		          break;
-		          case 'b': strncpy(boutvenue, "AUS" , 15);
+		          case 'b': strncpy_s(boutvenue, "AUS" , 15);
                   break;
-		          case 'c': strncpy(boutvenue, "ITA" , 15);
+		          case 'c': strncpy_s(boutvenue, "ITA" , 15);
                   break;
-		          case 'd': strncpy(boutvenue, "JPN" , 15);
+		          case 'd': strncpy_s(boutvenue, "JPN" , 15);
 		          break;
-		          case 'e': strncpy(boutvenue, "CHN" , 15);
+		          case 'e': strncpy_s(boutvenue, "CHN" , 15);
                   break;
-		          case 'f': strncpy(boutvenue, "FRA" , 15);
+		          case 'f': strncpy_s(boutvenue, "FRA" , 15);
 		          break;
-		          case 'g': strncpy(boutvenue, "SWE" , 15);
+		          case 'g': strncpy_s(boutvenue, "SWE" , 15);
                   break;
-                  case 'h': strncpy(boutvenue, "NZL" , 15);
+                  case 'h': strncpy_s(boutvenue, "NZL" , 15);
 		          break;
-		          case 'i': strncpy(boutvenue, "BRA" , 15);
+		          case 'i': strncpy_s(boutvenue, "BRA" , 15);
 		          break;
-		          case 'j': strncpy(boutvenue, "ZAF" , 15);
+		          case 'j': strncpy_s(boutvenue, "ZAF" , 15);
 		          break;
-		          case 'k': strncpy(boutvenue, "JAM" , 15);
+		          case 'k': strncpy_s(boutvenue, "JAM" , 15);
 		          break;
-		          case 'l': strncpy(boutvenue, "IND" , 15);
+		          case 'l': strncpy_s(boutvenue, "IND" , 15);
                   break;
-		          case 'm': strncpy(boutvenue, "SCO" , 15);
+		          case 'm': strncpy_s(boutvenue, "SCO" , 15);
 		          break;
-		          case 'n': strncpy(boutvenue, "WAL" , 15);
+		          case 'n': strncpy_s(boutvenue, "WAL" , 15);
                   break;
-                  case 'o': strncpy(boutvenue, "CAN" , 15);
+                  case 'o': strncpy_s(boutvenue, "CAN" , 15);
 		          break;
-		          case 'p': strncpy(boutvenue, "DNK" , 15);
+		          case 'p': strncpy_s(boutvenue, "DNK" , 15);
 		          break;
-		          case 'q': strncpy(boutvenue, "POL" , 15);
+		          case 'q': strncpy_s(boutvenue, "POL" , 15);
                   break;
-		          case 'r': strncpy(boutvenue, "TUR" , 15);
+		          case 'r': strncpy_s(boutvenue, "TUR" , 15);
 		          break;
-		          case 's': strncpy(boutvenue, "MEX" , 15);
+		          case 's': strncpy_s(boutvenue, "MEX" , 15);
                   break;
-                  case 't': strncpy(boutvenue, "NIL" , 15);
+                  case 't': strncpy_s(boutvenue, "NIL" , 15);
                   break;
-                  case 'u': strncpy(boutvenue, "BLR" , 15);
+                  case 'u': strncpy_s(boutvenue, "BLR" , 15);
                   break;
-                  case 'v': strncpy(boutvenue, "UKR" , 15);
+                  case 'v': strncpy_s(boutvenue, "UKR" , 15);
                   break;
-                  case 'w': strncpy(boutvenue, "ROU" , 15);
+                  case 'w': strncpy_s(boutvenue, "ROU" , 15);
                   break;
-                  case 'x': strncpy(boutvenue, "HUN" , 15);
+                  case 'x': strncpy_s(boutvenue, "HUN" , 15);
                   break;
-                  case 'y': strncpy(boutvenue, "BGR" , 15);
+                  case 'y': strncpy_s(boutvenue, "BGR" , 15);
                   break;
-                  case 'z': strncpy(boutvenue, "MDA" , 15);
+                  case 'z': strncpy_s(boutvenue, "MDA" , 15);
                   break;
 		  }
 	  }
@@ -355,7 +355,7 @@ void contestam(void)
            if(profile.fail())
            {
               cout << "Could not open Pro Boxers file - Press a key" << endl;
-              getch();
+              _getch();
               exit(1);
            }
 
@@ -374,7 +374,7 @@ void contestam(void)
             c++;
 
               }while(c <= i);
-           getch();
+           _getch();
            frec.close();
            profile.close();
            return;
@@ -389,7 +389,7 @@ void contestam(void)
            if(profile.fail())
            {
               cout << "Could not open Pro Boxers file - Press a key" << endl;
-              getch();
+              _getch();
               exit(1);
            }
 
@@ -408,7 +408,7 @@ void contestam(void)
             c++;
 
               }while(c <= i);
-           getch();
+           _getch();
            frec.close();
            profile.close();
            return;
@@ -419,7 +419,7 @@ void contestam(void)
      if(boxr[0].suspend > 0 ||  boxr[1].suspend > 0)
      {
            cout << "           Bout Cannot take place. One or both Boxers suspended" << endl;
-           getch();
+           _getch();
           frec.close();
           return;
      }
@@ -427,7 +427,7 @@ void contestam(void)
      if(boxr[0].active == 0 ||  boxr[1].active == 0)
      {
            cout << "           Bout Cannot take place. One or both Boxers deactivated" << endl;
-           getch();
+           _getch();
           frec.close();
           return;
      }
@@ -439,7 +439,7 @@ void contestam(void)
         if(boxr[0].totalfights > 0 || boxr[1].totalfights > 0)
            {
             cout << "           Bout Cannot take place. One or both Boxers is a Pro" << endl;
-            getch();
+            _getch();
             frec.close();
             return;
            }
@@ -462,7 +462,7 @@ void contestam(void)
 
 
          cin.sync();
-         getch();
+         _getch();
          cin.sync();
 
          cout << endl << endl;
@@ -483,7 +483,7 @@ void contestam(void)
      cout << "                  " << boxr[0].weight << "                              " << boxr[1].weight << endl;
      cout << "                  " << boxr[0].heightfeet << "-" << boxr[0].heightinches << "                              " << boxr[1].heightfeet << "-" << boxr[1].heightinches << endl;
      cout << "                  Create this contest y/n"<< endl;
-     goahead = getch();
+     goahead = _getch();
 
     goahead = tolower(goahead);
 
@@ -510,7 +510,7 @@ void contestam(void)
 
      cin.sync();
 
-     getch();
+     _getch();
 
      cin.sync();
 
@@ -1237,14 +1237,14 @@ void contestam(void)
             if(jscore11 > jscore12 && jscore21 > jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, unan , 8);
+                strncpy_s(howclose, unan , 8);
                 hw[0] = 'U';
                 hw[1] = '\0';
             }
             else if(jscore11 > jscore12 && jscore21 > jscore22 && jscore31 < jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 hw[0] = 'M';
                 hw[1] = '\0';
                 tscore1 = jscore21;
@@ -1257,28 +1257,28 @@ void contestam(void)
             else if(jscore11 > jscore12 && jscore21 < jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 hw[0] = 'M';
                 hw[1] = '\0';
             }
             else if(jscore11 < jscore12 && jscore21 > jscore22 && jscore31 > jscore32)
             {
                 boxer1dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 hw[0] = 'M';
                 hw[1] = '\0';
             }
             else if(jscore11 < jscore12 && jscore21 < jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, unan , 8);
+                strncpy_s(howclose, unan , 8);
                 hw[0] = 'U';
                 hw[1] = '\0';
             }
             else if(jscore11 < jscore12 && jscore21 < jscore22 && jscore31 > jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 hw[0] = 'M';
                 hw[1] = '\0';
                 tscore1 = jscore21;
@@ -1291,14 +1291,14 @@ void contestam(void)
             else if(jscore11 < jscore12 && jscore21 > jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 hw[0] = 'M';
                 hw[1] = '\0';
             }
             else if(jscore11 > jscore12 && jscore21 < jscore22 && jscore31 < jscore32)
             {
                 boxer2dec = 1;
-                strncpy(howclose, maj , 8);
+                strncpy_s(howclose, maj , 8);
                 hw[0] = 'M';
                 hw[1] = '\0';
             }
@@ -1310,7 +1310,7 @@ void contestam(void)
         if(amrec.fail())
           {
            cout << "Could not write to fight record file - Press a key" << endl;
-           getch();
+           _getch();
            exit(1);
          }
         }
@@ -1320,7 +1320,7 @@ void contestam(void)
         if(amrec.fail())
           {
            cout << "Could not write to fight record file - Press a key" << endl;
-           getch();
+           _getch();
            exit(1);
          }
         }
@@ -1338,11 +1338,11 @@ void contestam(void)
                amrec << boxr[0].firstname  << " " << boxr[0].surname << "  " << boxr[0].age << "  " << boxr[0].country << "  " << boxr[0].weight << "  W KO "  << round  << "  ";
                amrec << boxr[1].firstname  << " " << boxr[1].surname << "  " << boxr[1].age << "  " << boxr[1].country << "  " << boxr[1].weight << "  " << boutvenue  << "  -" << notes << endl;
 
-             strncpy(boxer1wonlost, "W KO " , 10);
-             strncpy(boxer2wonlost, "L KO " , 10);
-             sprintf(roundstobox, "%d", round);
-             strcat(boxer1wonlost, roundstobox);
-             strcat(boxer2wonlost, roundstobox);
+             strncpy_s(boxer1wonlost, "W KO " , 10);
+             strncpy_s(boxer2wonlost, "L KO " , 10);
+             sprintf_s(roundstobox, "%d", round);
+             strcat_s(boxer1wonlost, roundstobox);
+             strcat_s(boxer2wonlost, roundstobox);
 
              }
 
@@ -1361,11 +1361,11 @@ void contestam(void)
                amrec << boxr[1].firstname  << " " << boxr[1].surname << "  " << boxr[1].age << "  " << boxr[1].country << "  " << boxr[1].weight << "  W KO "   << round  << "  ";
                amrec << boxr[0].firstname  << " " << boxr[0].surname << "  " << boxr[0].age << "  " << boxr[0].country << "  " << boxr[0].weight << "  " << boutvenue  << "  -" << notes <<   endl;
 
-             strncpy(boxer1wonlost, "L KO " , 10);
-             strncpy(boxer2wonlost, "W KO " , 10);
-             sprintf(roundstobox, "%d", round);
-             strcat(boxer1wonlost, roundstobox);
-             strcat(boxer2wonlost, roundstobox);
+             strncpy_s(boxer1wonlost, "L KO " , 10);
+             strncpy_s(boxer2wonlost, "W KO " , 10);
+             sprintf_s(roundstobox, "%d", round);
+             strcat_s(boxer1wonlost, roundstobox);
+             strcat_s(boxer2wonlost, roundstobox);
 
              }
 
@@ -1401,13 +1401,13 @@ void contestam(void)
                amrec << boxr[0].firstname  << " " << boxr[0].surname << "  " << boxr[0].age << "  " << boxr[0].country << "  " << boxr[0].weight << "  W PTS " << rounds << "  ";
                amrec << boxr[1].firstname  << " " << boxr[1].surname << "  " << boxr[1].age << "  " << boxr[1].country << "  " << boxr[1].weight << "  " << boutvenue << "  -" << notes <<  endl;
 
-             strncpy(boxer1wonlost, "W PTS " , 10);
-             strncpy(boxer2wonlost, "L PTS " , 10);
-             sprintf(roundstobox, "%d", rounds);
-             strcat(boxer1wonlost, roundstobox);
-             strcat(boxer2wonlost, roundstobox);
-             strcat(boxer1wonlost, hw);
-             strcat(boxer2wonlost, hw);
+             strncpy_s(boxer1wonlost, "W PTS " , 10);
+             strncpy_s(boxer2wonlost, "L PTS " , 10);
+             sprintf_s(roundstobox, "%d", rounds);
+             strcat_s(boxer1wonlost, roundstobox);
+             strcat_s(boxer2wonlost, roundstobox);
+             strcat_s(boxer1wonlost, hw);
+             strcat_s(boxer2wonlost, hw);
             }
 
              if(boxer2dec && boxer1winbyknockout == 0 && boxer2winbyknockout == 0)
@@ -1440,13 +1440,13 @@ void contestam(void)
                amrec << boxr[1].firstname  << " " << boxr[1].surname << "  " << boxr[1].age << "  " << boxr[1].country << "  " << boxr[1].weight << "  W PTS " << rounds << "  ";
                amrec << boxr[0].firstname  << " " << boxr[0].surname << "  " << boxr[0].age << "  " << boxr[0].country << "  " << boxr[0].weight << "  " << boutvenue << "  -" << notes <<   endl;
 
-             strncpy(boxer1wonlost, "L PTS " , 10);
-             strncpy(boxer2wonlost, "W PTS " , 10);
-             sprintf(roundstobox, "%d" ,rounds);
-             strcat(boxer1wonlost, roundstobox);
-             strcat(boxer2wonlost, roundstobox);
-             strcat(boxer1wonlost, hw);
-             strcat(boxer2wonlost, hw);
+             strncpy_s(boxer1wonlost, "L PTS " , 10);
+             strncpy_s(boxer2wonlost, "W PTS " , 10);
+             sprintf_s(roundstobox, "%d" ,rounds);
+             strcat_s(boxer1wonlost, roundstobox);
+             strcat_s(boxer2wonlost, roundstobox);
+             strcat_s(boxer1wonlost, hw);
+             strcat_s(boxer2wonlost, hw);
         }
 
 
@@ -1512,7 +1512,7 @@ void contestam(void)
         if(profile.fail())
         {
           cout << "Could not open Pro Boxers file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
          }
 
@@ -1548,11 +1548,11 @@ void contestam(void)
         amarec[0].month = ft.month;
         amarec[0].year = ft.year;
         amarec[0].weight = boxr[0].weight;
-        strncpy(amarec[0].opfirstname, boxr[1].firstname,20);
-        strncpy(amarec[0].opsurname, boxr[1].surname,30);
-        strncpy(amarec[0].outcome, boxer1wonlost,10);
-        strncpy(amarec[0].venue, boutvenue,15);
-        strncpy(amarec[0].title, bouttitle,30);
+        strncpy_s(amarec[0].opfirstname, boxr[1].firstname,20);
+        strncpy_s(amarec[0].opsurname, boxr[1].surname,30);
+        strncpy_s(amarec[0].outcome, boxer1wonlost,10);
+        strncpy_s(amarec[0].venue, boutvenue,15);
+        strncpy_s(amarec[0].title, bouttitle,30);
 
 
         amarec[1].recnum = boxer2;
@@ -1560,17 +1560,17 @@ void contestam(void)
         amarec[1].month = ft.month;
         amarec[1].year = ft.year;
         amarec[1].weight = boxr[1].weight;
-        strncpy(amarec[1].opfirstname, boxr[0].firstname,20);
-        strncpy(amarec[1].opsurname, boxr[0].surname,30);
-        strncpy(amarec[1].outcome, boxer2wonlost,10);
-        strncpy(amarec[1].venue, boutvenue,15);
-        strncpy(amarec[1].title, bouttitle,30);
+        strncpy_s(amarec[1].opfirstname, boxr[0].firstname,20);
+        strncpy_s(amarec[1].opsurname, boxr[0].surname,30);
+        strncpy_s(amarec[1].outcome, boxer2wonlost,10);
+        strncpy_s(amarec[1].venue, boutvenue,15);
+        strncpy_s(amarec[1].title, bouttitle,30);
 
         amrecords.open("AMRECORDS.BIN",ios::binary|ios::out|ios::app);
         if(amrecords.fail())
         {
           cout << "Could not open Pro records file - Press a key" << endl;
-          getch();
+          _getch();
           exit(1);
         }
 
@@ -1586,7 +1586,7 @@ void contestam(void)
 
          cin.sync();
          cout << endl << "Press a key.................." << endl;
-         getch();
+         _getch();
          cin.sync();
 
         frec << "================================================================================" << endl;

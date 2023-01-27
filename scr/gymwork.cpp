@@ -18,7 +18,7 @@ void gymwork(void)
           if(profile.fail())
           {
              cout << "Could not open Pro Boxers file - Press a key" << endl;
-             getch();
+             _getch();
             exit(1);
           }
 
@@ -73,7 +73,7 @@ void gymwork(void)
              if(profile.fail())
             {
                cout << "Could not open Pro Boxers file - Press a key" << endl;
-               getch();
+               _getch();
                exit(1);
            }
 
@@ -117,7 +117,7 @@ void gymwork(void)
              if(bxr.suspend > 0)
              {
                  cout << "No training took place NICE TRY HAHA" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
              }
@@ -131,7 +131,7 @@ void gymwork(void)
                     bxr.suspend = 1;
                     profile.write((char *)(&bxr),STRUCTSIZEPRO);
                     cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
                 }
@@ -141,7 +141,7 @@ void gymwork(void)
                     bxr.suspend = 1;
                     profile.write((char *)(&bxr),STRUCTSIZEPRO);
                     cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
                  }
@@ -166,7 +166,7 @@ void gymwork(void)
                      bxr.suspend = 1;
                      profile.write((char *)(&bxr),STRUCTSIZEPRO);
                      cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                     getch();
+                     _getch();
                      profile.close();
                      return;
                    }
@@ -175,7 +175,7 @@ void gymwork(void)
                     bxr.suspend = 1;
                     profile.write((char *)(&bxr),STRUCTSIZEPRO);
                     cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
                    }
@@ -198,7 +198,7 @@ void gymwork(void)
                      bxr.suspend = 1;
                      profile.write((char *)(&bxr),STRUCTSIZEPRO);
                      cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                     getch();
+                     _getch();
                      profile.close();
                      return;
                    }
@@ -207,7 +207,7 @@ void gymwork(void)
                     bxr.suspend = 1;
                     profile.write((char *)(&bxr),STRUCTSIZEPRO);
                     cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
                    }
@@ -229,7 +229,7 @@ void gymwork(void)
                      bxr.suspend = 1;
                      profile.write((char *)(&bxr),STRUCTSIZEPRO);
                      cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                     getch();
+                     _getch();
                      profile.close();
                      return;
                    }
@@ -238,7 +238,7 @@ void gymwork(void)
                     bxr.suspend = 1;
                     profile.write((char *)(&bxr),STRUCTSIZEPRO);
                     cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
                    }
@@ -261,7 +261,7 @@ void gymwork(void)
                      bxr.suspend = 1;
                      profile.write((char *)(&bxr),STRUCTSIZEPRO);
                      cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                     getch();
+                     _getch();
                      profile.close();
                      return;
                    }
@@ -270,7 +270,7 @@ void gymwork(void)
                     bxr.suspend = 1;
                     profile.write((char *)(&bxr),STRUCTSIZEPRO);
                     cout << " " << bxr.firstname << " " << bxr.surname << " Will not train" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
                    }
@@ -293,7 +293,7 @@ void gymwork(void)
                    {
                      profile.write((char *)(&bxr),STRUCTSIZEPRO);
                      cout << " " << bxr.firstname << " " << bxr.surname << " Next cycle in " << ((bxr.drive - 906) / 4) << " months" << endl << endl;
-                     getch();
+                     _getch();
                      profile.close();
                      return;
                    }
@@ -314,7 +314,7 @@ void gymwork(void)
                     profile.write((char *)(&bxr),STRUCTSIZEPRO);
                     cout << " " << bxr.firstname << " " << bxr.surname << " Will not take steroids" << endl << endl;
                     }
-                    getch();
+                    _getch();
                     profile.close();
                     return;
                    }
@@ -366,7 +366,7 @@ void gymwork(void)
             else
              {
                     cout << "No training took place" << endl << endl;
-                    getch();
+                    _getch();
                     profile.close();
                     return;
              }
@@ -374,7 +374,7 @@ void gymwork(void)
 
 
 
-             getch();
+             _getch();
              profile.close();
              return;
 

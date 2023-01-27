@@ -1,5 +1,6 @@
 // HBP Globel header file
 
+#include <Windows.h>
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
@@ -14,7 +15,7 @@
 #include <chrono>
 #include <thread>
 #include <vector>
-#include <Windows.h>
+
 
 
 using namespace std;
