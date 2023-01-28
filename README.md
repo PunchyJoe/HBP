@@ -1,3 +1,3 @@
 # HBP
-Heavyweight Boxing Promoter
+Heavyweight Boxing Promoter.  
 Download HBP.zip for windows32 build with included source code.
